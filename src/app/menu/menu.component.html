@@ -1,0 +1,47 @@
+<div class="container-header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <div class="icon">
+            <a [routerLink]="['/home']">
+              <mat-icon aria-hidden="false" aria-label="Cross icon" style="transform: rotate(45deg); color: white;">add</mat-icon>
+
+            </a> 
+          </div>  
+          <a class="nav-titulo navbar-brand" href="#">MediCitas</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/home']">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/citas']" >Ver Doctores</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Consultar Citas
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" [routerLink]="['/pasadas']">Pasados</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/futuras']" >Futuros</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" [routerLink]="['/reportes']">Todos</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/nosotros']" >Nosotros</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Buscas Un Doctor?" aria-label="Buscar Doctor" #buscarTexto (keyup.enter)="buscarDoctor(buscarTexto.value)">
+              <button class="btn btn-outline-dark" type="submit" (click)="buscarDoctor(buscarTexto.value)">Buscar</button>
+            </form>
+            <div class="separacion"></div>
+          </div>
+        </div>
+      </nav>
+  </div>
+
+  

@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Tabla de Enfermedades</h1>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Causas</th>
+          <th scope="col">Consecuencias</th>
+          <th scope="col">Tratamiento</th>
+          <th scope="col">Tasa de Mortalidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (enfermedad of array; track $index) {
+        <tr>
+          <th scope="row">{{ enfermedad.id }}</th>
+          <td>{{ enfermedad.nombre }}</td>
+          <td>{{ enfermedad.causas }}</td>
+          <td>{{ enfermedad.consecuencias }}</td>
+          <td>{{ enfermedad.tratamiento }}</td>
+          <td>{{ enfermedad.tasa_mortalidad }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>

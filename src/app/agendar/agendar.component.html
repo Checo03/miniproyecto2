@@ -1,0 +1,78 @@
+
+<div class="row animated fadeIn fast">
+    <div class="col md-4 text-center">
+        <h1 [ngStyle]="{'color': 'darkblue', 'font-size': '26px', 'margin-bottom': '10px'}">Foto del doctor seleccionado</h1>
+        <img width="300px" [src]="doctor.img" alt="..." class="img-fluid">
+        <br><br>
+        <a [routerLink]="['/citas']" class="btn btn-outline-danger btn-block">Regresar</a>
+    </div>
+
+    
+    <div class="container mt-5">
+        <div [ngStyle]="{'padding': '20px'}">
+            <h1 [ngStyle]="{'color': 'blue', 'font-size': '24px', 'margin-bottom': '10px'}">Reservacion de citas medicas</h1>
+            <h2 [ngStyle]="{'color': 'green', 'font-size': '20px', 'margin-bottom': '10px'}">Datos del doctor con el que se desea sacar una cita</h2>
+        
+            <div [ngStyle]="{'border': '2px solid blue', 'padding': '10px', 'margin-bottom': '20px'}">
+                <h3>{{ doctor.nombre }}</h3>
+                <hr>
+                <div class="form-group">
+                    <label for="especialidad">Especialidad</label>
+                    <input type="text" class="form-control" id="especialidad" [(ngModel)]="doctor.especialidad" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="cedula">Cedula</label>
+                    <input type="text" class="form-control" id="cedula" [(ngModel)]="doctor.cedula" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="estudios">Estudios</label>
+                    <input type="text" class="form-control" id="estudios" [(ngModel)]="doctor.estudios" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="costo">Costo de la consulta</label>
+                    <input type="text" class="form-control" id="costo" [(ngModel)]="doctor.costo" readonly>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+        
+        
+        <div class="container-formulario">
+          
+            <h1>Completa Tus Datos</h1>
+            <div class="form-group">
+              <mat-form-field class="full-width">
+                <mat-label>Nombre Completo:</mat-label>
+                <input matInput placeholder="Tu Nombre" [(ngModel)]="nombrePaciente" required>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <mat-form-field class="full-width">
+                <mat-label>Teléfono</mat-label>
+                <input type="tel" matInput placeholder="Tu Número" [(ngModel)]="telefonoPaciente" required>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <label for="fechaCita">Fecha de la cita</label>
+              <mat-form-field class="full-width">
+                <mat-label>Escoge Una Fecha</mat-label>
+                <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" [(ngModel)]="fechaCita" required>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <label for="horaCita">Hora de la cita</label>
+              <mat-form-field class="full-width">
+                <mat-label>Escoge Una Hora</mat-label>
+                <input matInput [ngxTimepicker]="defaultValue" [value]="'12:00 pm'" readonly [(ngModel)]="horaCita" required>
+                <ngx-material-timepicker #defaultValue></ngx-material-timepicker>
+              </mat-form-field>
+            </div>
+            <button type="submit" class="btn btn-primary full-width" (click)="guardarCita()">Reservar cita</button>
+          </div>
+          
+</div>
+
+<br>

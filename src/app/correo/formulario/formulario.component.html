@@ -1,0 +1,16 @@
+<div class="container-Correo ">
+    <div class="card text-center border-primary">
+        <div class="card-header bg-info text-white" style="font-size: 21px; font-weight: 400;">
+          Registra Tu Correo
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Registra tu correo para avisarte de descuentos en consultas o citas disponibles </h5>
+          <app-mostrar-correo (eventoEnviarCorreo)="recibirCorreo($event)"></app-mostrar-correo>
+        </div>
+        <div class="alert alert-success" role="alert" *ngIf="correoEnviado">
+          Correo enviado: {{ correoEnviado }}
+        </div>
+    </div>
+</div>
+
+

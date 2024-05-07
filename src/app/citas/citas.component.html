@@ -1,0 +1,25 @@
+<h1 class="text-center">Doctores disponibles</h1>
+<br>
+
+<div class="Container-cards row row-cols-1 row-cols-md-2 g-4">
+  @for (h of misDoctores; track h; let i = $index){
+    <div class="Medico-Card card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="{{h.img}}" class="img-fluid rounded-start" alt="imagen no disponible">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{h.nombre}}</h5>
+            <p class="card-text"><b>Costo de su consulta: </b>${{h.costo}}</p>
+            <p class="card-text">{{h.especialidad}}</p>
+            <p class="card-text">{{h.estudios}}</p>
+            <p class="card-text"><b>Cedula: </b><small class="text-muted">{{h.cedula}}</small></p>
+            <button><a [routerLink]="['/agendar',i]" class="mb-3">Agendar cita</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+

@@ -1,0 +1,14 @@
+.container-logo {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/img/pexels-brett-sayles-2856025.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.Container-Covid{
+    margin-top: 40px;
+    margin: 0 auto;
+    width: 80%;
+}
